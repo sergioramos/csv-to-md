@@ -1,0 +1,4 @@
+var csvtomd = require('../');
+var csv = require('csv-parser');
+
+process.stdin.pipe(csv()).pipe(csvtomd()).pipe(process.stdout);

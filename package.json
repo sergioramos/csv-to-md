@@ -1,0 +1,35 @@
+{
+  "name": "csv-to-md",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/ramitos/csv-to-md",
+  "bugs": {
+    "url": "http://github.com/ramitos/csv-to-md/issues",
+    "email": "mail@sergioramos.me"
+  },
+  "license": {
+    "url": "https://raw.github.com/ramitos/csv-to-md/master/license",
+    "type": "MIT"
+  },
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "main": "src/csv-to-md.js",
+  "directories": {
+    "lib": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ramitos/csv-to-md.git"
+  },
+  "scripts": {
+    "test": "make test test-coveralls"
+  },
+  "dependencies": {
+    "build-array": "^1.0.0",
+    "csv-parser": "^1.4.6",
+    "through2": "^0.6.2"
+  },
+  "engines": {
+    "node": ">=0.8"
+  }
+}

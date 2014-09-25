@@ -1,15 +1,15 @@
-# csvtomd
+# csv-to-md
 
 ## install
 
 ```bash
-npm install [--save/--save-dev] [-g] csvtomd
+npm install [--save/--save-dev] [-g] csv-to-md
 ```
 
 ## usage
 
 ```bash
-$ csvtomd < source.csv > table.md
+$ csv-to-md < source.csv > table.md
 ```
 
 ## api

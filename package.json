@@ -1,6 +1,6 @@
 {
   "name": "csv-to-md",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/ramitos/csv-to-md",
@@ -14,8 +14,10 @@
   },
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "main": "src/csv-to-md.js",
+  "bin": "bin/csv-to-md",
   "directories": {
-    "lib": "src"
+    "lib": "src",
+    "bin": "bin"
   },
   "repository": {
     "type": "git",

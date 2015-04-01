@@ -2,9 +2,14 @@ var through = require('through2');
 var format = require('util').format;
 var buildArray = require('build-array');
 var isArray = require('is-array');
+var defaults = require('defaults');
 
 
-var header = function(row) {
+var header = function(row, options) {
+  var opts = defaults(options, {
+    center: true
+  });
+
   var names = Object.keys(row).map(function(key) {
     return format('| %s ', key);
   });
@@ -15,8 +20,10 @@ var header = function(row) {
     });
 
     line[0] = '|';
-    line[1] = ':';
-    line[line.length - 1] = ':'
+    if (opts.center) {
+      line[1] = ':';
+      line[line.length - 1] = ':'
+    }
 
     return line.join('');
   });
@@ -50,9 +57,9 @@ module.exports = function() {
   });
 };
 
-module.exports.thunk = function(rows) {
+module.exports.thunk = function(rows, opts) {
   return (!isArray(rows) ? [rows] : rows).map(function(row, i) {
-    if (i === 0) return header(row).concat(line(row));
+    if (i === 0) return header(row, opts).concat(line(row));
     return line(row);
   }).join('');
 };

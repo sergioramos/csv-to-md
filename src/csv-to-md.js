@@ -1,6 +1,8 @@
 var through = require('through2');
 var format = require('util').format;
 var buildArray = require('build-array');
+var isArray = require('is-array');
+
 
 var header = function(row) {
   var names = Object.keys(row).map(function(key) {
@@ -48,6 +50,9 @@ module.exports = function() {
   });
 };
 
-module.exports.thunk = function(row) {
-  return header(row).concat(line(row));
+module.exports.thunk = function(rows) {
+  return (!isArray(rows) ? [rows] : rows).map(function(row, i) {
+    if (i === 0) return header(row).concat(line(row));
+    return line(row);
+  }).join('');
 };

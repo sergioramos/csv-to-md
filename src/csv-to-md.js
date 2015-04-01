@@ -47,3 +47,7 @@ module.exports = function() {
     fn(null, line(row));
   });
 };
+
+module.exports.thunk = function(row) {
+  return header(row).concat(line(row));
+};
